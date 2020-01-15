@@ -1,0 +1,313 @@
+body{
+    min-height: 100vh;
+    background-color:rgb(255, 255, 255);
+}
+/*Nav menu top*/
+.cabecalho{
+    background-color:rgb(125, 132, 134);
+    top: 10px;
+    padding: 10px;
+}
+/*Menu dropdow*/
+.dropbtn {
+    background-color:rgb(125, 132, 134);
+    border-radius: 10px;
+    color:#363636;
+    padding: 0px;
+    font-size: 2px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 250px;
+    box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 6px 6px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: rgb(182, 185, 185)}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color:rgb(125, 132, 134);
+  }
+.img{
+    width:35px;
+    height: 35px;
+}
+.position-menu{
+    left: 1170px;
+}
+hr{
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+a{
+    text-align: center;
+    color: black;
+}
+/*Fim no menu dropdow*/
+.tesborder{
+    border: solid red 2px;
+}
+/*modela h1*/
+h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: 10;
+    margin-top: 40px;
+    
+}
+/*btn config*/
+.btnchamados{
+    border-radius: 4px;
+    background-color: white;
+    border: none;
+    margin-top: 20px;
+    padding: 10px;
+    /*height: 30px;*/
+}
+.btnNovoChamado{
+    border-radius: 4px;
+    background-color:tomato;
+    border: none;
+    margin-top: 20px;
+    padding: 10px;
+    /*height: 30px;*/
+    margin-left: 800px;
+    color: white;
+}
+.btnchamados:hover{
+    background-color:tomato;
+    color: white;
+    border: none !important;
+}
+.hr1{
+    margin-top: 15px;
+}
+/*Config navbar logo*/
+.botao{
+    margin-left: 15px;
+    border: none;
+    background-color: rgb(125, 132, 134);
+    color: white;
+    
+}
+.botao:hover{
+    color:black;
+    border: none;
+}
+/*.logoImg{
+    margin-right: 150px;
+}*/
+/*Config input e button navbar*/
+.input-form{
+    border-color: white;
+    border-radius: 5px;
+    margin-left: 800px;
+    /*background-color:#585858;*/
+    color: black;
+}
+.btnbusca{
+    border-color:white;
+    border-radius: 5px;
+    background-color:rgb(125, 132, 134);
+    color: white;
+}
+/*Configura imagem lupa*/
+.lupaconf{
+    width: 20px;
+}
+/*Estilo para page Chamado*/
+
+/*Config border novo chamado*/
+.borderchamado{
+    border:solid 1px #ccc;
+    background-color: #F0FFF0;
+}
+/*Config select*/
+.configSelect{
+    right: 150px;
+    left: 150px;
+}
+.btn-default{
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.fileinput-button{
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+/*Config btn-criar-chamado*/
+.btn-criar-chamado{
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 3px;
+    background-color:#2eaaa8;
+    color: white;
+    border:none;
+}
+.btn-estilo{
+    border-radius: 5px;
+}
+/*btn escolher arquivo*/
+.fileinput-button input{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer;
+}
+.pull-right{
+    left: 515px;
+    /*float: right !important;*/
+}
+.pull-left{
+    float: left !important;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+.colorCad{
+    border-top: 15px;
+    border-radius: 3px;
+    background-color: rgb(149, 245, 149);
+
+}
+.imagem-logo{
+    width: 70px;
+    background-color: #0099CC;
+    border-radius: 2px;
+}
+.h4-st{
+    text-align: left;
+    padding-left: 20px;
+    margin-top: -15px;
+    font-size: 18px;
+    overflow: hidden;
+    display: block;
+}
+.assunto{
+    margin-left: 25px;
+    font-size: 15px;
+    text-align: left;
+    margin-bottom: -15px;
+}
+.status{
+    margin-top: -100px;
+    margin-left: 900px;
+    background-color: greenyellow;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding: 0.2em 0.6em 0.3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
+    border-right: 10px;
+    border-left: 10px;
+}
+.date{
+    margin-top: 15px;
+    margin-left: 900px;
+    margin-top: -10px;
+}
+.hr-chamado{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.btn_conversa{
+    border: none;
+    background-color: white;
+}
+.btn_conversa :link{
+    text-decoration: none;
+    color: #333;
+}
+.list-group :link{
+    text-decoration: none;
+}
+.a-link{
+    text-decoration:none;
+}
+.a-link:hover{
+   color: black;
+}
+.meusdados{
+    margin-top: 50px;
+    left: 300px;
+}
+.alteraSenha{
+    margin-bottom: 500px;
+}
+.table-est{
+    background-color: #FAFAD2;
+    opacity: 0.9;
+}
+.colorir{
+    background-color: red;
+    border: red;
+}
+
+
+
+/*Modal
+.bg-modal{
+    width: auto;
+    height: 640px;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    position:absolute ;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.modal-content{
+    width: 1000px;
+    height: 300px;
+    background-color:white;
+    border-radius: 4px;
+    position: relative;
+    
+}
+.close{
+    position: absolute;
+    top:0;
+    right: 0px;
+    font-size: 45px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}*/
+
+/*BTN retira-estoque*/
+
+.btn-retirar{
+    top: 30px;
+}

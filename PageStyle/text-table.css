@@ -1,0 +1,15 @@
+td{
+    font-size: 12px;
+    text-align: center;
+}
+th{
+    text-align: center;
+   
+}
+.tables{
+    background-color:lightslategrey;
+}
+table{
+    margin-top: 15px;
+    border-radius: 6px;
+}

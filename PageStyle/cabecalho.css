@@ -1,0 +1,73 @@
+.form-content{
+    border-radius: 10px;
+    margin-left: 300px;
+    margin-top: 40px;
+    overflow-y:hidden;
+}
+.img{
+    width:35px;
+    height: 35px;
+}
+.position-menus{
+    right: 1000px ;
+}
+.position-menus1{
+    right: 990px ;
+}
+/*Cadastro*/
+.deslocamento{
+    margin-top: 10px;
+    left: 15px;
+}
+.deslocamento1{
+    left: 15px;
+}
+.deslocamento-id{
+    left: 15px;
+}
+.deslocamento-btn{
+    margin-top: 32px;
+    left: 450px;
+}
+.deslocamento-btn-cancel{
+    margin-top: 32px;
+    left: 328px;
+}
+.fundo{
+    background-color:whitesmoke;
+    border-radius: 10px;
+}
+.btn-cancelar{
+    margin-bottom: 5px;
+}
+.border-table{
+    border-radius: 6px;
+}
+
+.inputs-id{
+    width: 53px;
+    height: 28px;
+}
+.inputs{
+    height: 28px;
+    
+}
+.posit{
+    margin-right: 15px;
+}
+.posit-in{
+    width:20px;
+}
+
+/*rodapé*/
+
+.foot{
+    position: fixed;
+    width: 1366px;
+    height: 70px;
+    left: 0px;
+    top: 573px;
+    
+
+    background-color:rgb(125, 132, 134);
+}

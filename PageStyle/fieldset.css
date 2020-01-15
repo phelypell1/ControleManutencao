@@ -1,0 +1,91 @@
+.fieldset1
+{   
+    margin-top: 5px;
+    border: 1px solid black ;
+    padding:6px;
+    margin-bottom: 10px;
+    height: 75px;
+}
+
+.legend1
+{
+  margin-bottom:-10px;
+ 
+}
+.fieldset2
+{
+    border: 1px solid black ;
+    padding:6px;
+    height: 80px;
+    
+}
+.legend2
+{
+  top: 1px;
+  margin-bottom: -5px;
+}
+.fieldset3
+{   
+    margin-top: 5px;
+    border: 1px solid black ;
+    padding:6px;
+    margin-bottom: 10px;
+}
+
+.legend3
+{
+  margin-bottom:-10px;
+ 
+}
+.espaco{
+    margin-left: 10px;
+}
+.espaco1{
+  margin-left:-18px;
+}
+
+label{
+    font-size: 15px;
+}
+.field{
+    margin-top: -15px;
+    border: 1px solid black ;
+    padding:6px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.legendPainel1{
+  margin-bottom:-16px;
+}
+
+
+.fieldsetCad
+{   
+    margin-top: 5px;
+    border: 1px solid black ;
+    padding:6px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    height: 75px;
+    width: 120px;
+}
+
+.legendCad
+{
+  margin-bottom:-10px;
+}
+.fieldsetCad1
+{   
+    margin-top: 5px;
+    border: 1px solid black ;
+    padding:6px;
+    margin-bottom: 10px;
+    margin-left:-45px;
+    height: 75px;
+    width: 115px;
+}
+
+.legendCad1
+{
+  margin-bottom:-10px;
+}
