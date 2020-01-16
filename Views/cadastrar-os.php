@@ -220,7 +220,15 @@ $status = isset($_GET['status']) ? $_GET['status'] : 0;
                             </div>
                         </fieldset>
                     </div>
-                    <div class="col-md-6"></div>
+                    <div class="col-md-7 col">
+                        <fieldset class="fieldsetCad5">
+                            <legend class="legendCad5">Teste</legend>
+                            <div class="form-group">
+                            <a href="../Cadastros/add-pecas.php?id=''" class="">Clique aqui para adicionar imagens<img src="../imagens/cadastrar.png" width="35"></a>
+                            </div>
+                            
+                        </fieldset>
+                    </div>
                     <div class="form-group col-2">
                         <input id="btn-novaos" type="button" class=" form-control btn btn-primary btn-border" value="Cadastrar">
                     </div>
@@ -230,10 +238,5 @@ $status = isset($_GET['status']) ? $_GET['status'] : 0;
                 </div>
             </form>
         </div>
-        <form action="../Controllers/add-img.php" method="post" enctype="multipart/form-data" id="add-img">
-                <input type="file" name="abc" id="arquivo" required>
-                <button type="submit" value="add" id="btn-add">add</button>
-            </form>
-            <br>
     </div>
 </body>

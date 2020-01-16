@@ -6,16 +6,20 @@ require_once('../Connections/Conexao.php');
     }
     $ObjDB = new DB();
     $link = $ObjDB -> connecta_mysql(); 
+    $nome_novo = $_POST['label_code'];
+    $patrimonio = $_POST['label_patrimonio'];
+    $date = date('Ymd');
+
    //fakepath
     if(isset($_FILES['abc'])){
     $extensao = strtolower(substr($_FILES['abc']['name'], -4));
-    $novo_nome = "img".md5(time()) . $extensao;
+    $novo_nome = $patrimonio.$date . $extensao;
     $diretorio = "../imagensOs/";
     //irá mover imagem para pasta.
     move_uploaded_file($_FILES['abc']['tmp_name'], $diretorio.$novo_nome);
-    $query ="insert imagens (nomeImg, dataImg) values('$novo_nome', NOW())";
+    $query ="insert imagens (numPatrimonio, nomeImg, dataImg) values('$patrimonio','$novo_nome', NOW())";
     if(mysqli_query($link, $query)){
-        header('Location: ../Views/cadastrar-os.php');
+        header('Location: ../Cadastros/add-pecas.php');
     }else{
         echo mysqli_error($link);
     };
