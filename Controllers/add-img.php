@@ -17,7 +17,7 @@ require_once('../Connections/Conexao.php');
     $diretorio = "../imagensOs/";
     //irá mover imagem para pasta.
     move_uploaded_file($_FILES['abc']['tmp_name'], $diretorio.$novo_nome);
-    $query ="insert imagens (numPatrimonio, nomeImg, dataImg) values('$patrimonio','$novo_nome', NOW())";
+    $query ="insert imagens (numPatrimonio, nomeImg, dataImg) values('$patrimonio','$diretorio$novo_nome', NOW())";
     if(mysqli_query($link, $query)){
         header('Location: ../Cadastros/add-pecas.php');
     }else{

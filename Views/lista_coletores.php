@@ -11,24 +11,27 @@ require_once('../Cabecalhos/nav-bar.php');
     require_once('../Connections/Conexao.php');
     $ObjDB = new DB();
     $link = $ObjDB->connecta_mysql();
-    $sql = "select * from S0003 order by idOs";
+    $sql = "select idOs,tipoEquipamento, IMEI, Patrimonio, descricaoDefeito, date_format(dataEntrada, '%d-%m-%Y')as dat,
+    osStatus from CadastroOs where tipoEquipamento = 'Smartphone'";
     $result = mysqli_query($link, $sql);
-    echo '<table class="table table-bordered table-hover table-sm">
+    echo '
+    <div class="container tbl-tbl">
+    <table class="table table-bordered table-hover table-sm tbl-tbl">
             <thead>
               <tr>
                 <th class="tables" scope="col">#</th>
                 <th  class="tables"class="tables" scope="col">Equipamento</th>
                 <th class="tables" class="tables" scope="col">IMEI</th>
-                <th class="tables" scope="col">SUT</th>
                 <th class="tables" scope="col">Patrimônio</th>
                 <th class="tables" scope="col">Defeito</th>
                 <th class="tables" scope="col">Entrada</th>
-                <th class="tables" scope="col">Técnico</th>
-                <th class="tables" scope="col">Origem</th>
-                <th class="tables" scope="col">Departamento</th>
+                <th class="tables" scope="col">Status</th>
+                <th class="tables" scope="col">Nova OS</th> 
+                <th class="tables" scope="col">Histórico</th>
                 <th class="tables" scope="col">Impressão</th>
               </tr>
-            </thead>';
+            </thead>
+            </div>';
               
 
     if ($result) {
@@ -36,13 +39,10 @@ require_once('../Cabecalhos/nav-bar.php');
             $os = $registro['idOs'];
             $equipamento = $registro['tipoEquipamento'];
             $imei = $registro['IMEI'];
-            $sut = $registro['SUT'];
-            $patrimonio = $registro['patrimonio'];
+            $patrimonio = $registro['Patrimonio'];
             $descDefeito = $registro['descricaoDefeito'];
             $dataEntrada = $registro['dat'];
-            $tecnicoRecebimento = $registro['tecnicoRecebimento'];
-            $origem = $registro['nomeCidade'];
-            $departamento =  $registro['nomeDep'];
+            $status =  $registro['osStatus'];
             /////////////////////////////////////////
             echo '
         <tbody class="table-borderless">    
@@ -50,13 +50,12 @@ require_once('../Cabecalhos/nav-bar.php');
                 <th scope="row" class="td">'.$os.'</th>
                 <td>'.$equipamento.'</td>
                 <td>'.$imei.'</td>
-                <td>'.$sut.'</td>
                 <td>'.$patrimonio.'</td>
                 <td>'.$descDefeito.'</td>
                 <td>'.$dataEntrada.'</td>
-                <td>'.$tecnicoRecebimento.'</td>
-                <td>'.$origem.'</td>
-                <td>'.$departamento.'</td>
+                <td>'.$status.'</td>
+                <td><a href="../Views/detalhes_os.php?id='.$os.'"><img src="../imagens/alert.png" width="30"></a></td>
+                <td><a href="../Views/listar_detalhes.php?id='.$os.'"><img src="../imagens/list.png" width="25"></a></td>
                 <td><a href="../Relatorio/relatorio_garantia.php?id='.$os.'"><img src="../imagens/imprimir.png" width="25"></a></td>
             </tr>
         </tbody>';

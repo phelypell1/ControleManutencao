@@ -14,10 +14,10 @@ require_once('../Cabecalhos/nav-bar.php');
             <fieldset class="fieldsetCad4">
                 <legend class="legendCad4">Cadastrar Imagens</legend>
                 <div class="row">
-                    <div class="form-group col-md-2">
+                    <!--<div class="form-group col-md-2">
                         <label for="">Nome para imagem</label>
                         <input name="label_code" type="text" class="form-control">
-                    </div>
+                    </div>-->
                     <div class="form-group col-md-2">
                         <label for="">Patrimonio</label>
                         <input name="label_patrimonio" type="text" class="form-control">

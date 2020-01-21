@@ -42,6 +42,8 @@ if ($result) {
         $tecnicoRecebimento = $registro['tecnicoRecebimento'];
         $origem = $registro['nomeCidade'];
         $departamento =  $registro['nomeDep'];
+        $tipoReparo = $registro['tipoReparo'];
+        $status = $registro['osStatus'];
     }
 }
 ?>
@@ -49,7 +51,7 @@ if ($result) {
 <script src="../jquery/jquery-3.4.1.js"></script>
 
 <body>
-    <div class="container border">
+    <div class="container">
         <link rel="stylesheet" href="../PageStyle/text-table.css">
         <div class="rows">
             <form action="../Controllers/cadastro_historico.php" method="post">
@@ -63,14 +65,14 @@ if ($result) {
          </div>';
                 } else if ($status == 2) {
                     echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-           <strong>ERRO 1 <br></strong> Não foi possível proseguir, tente novamente.
+           <strong>ERRO  <br></strong> Não foi possível proseguir, tente novamente.
            <button id="myAlert" type="button" class="close" data-dismiss="alert" aria-label="Close">
              <span aria-hidden="true">&times;</span>
            </button>
          </div>';
                 } else if ($status == 3) {
                     echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-           <strong>ERRO 1 <br></strong> Não foi possível proseguir, tente novamente.
+           <strong>ERRO <br></strong>Campos em branco, verifique e tente novamente.
            <button id="myAlert" type="button" class="close" data-dismiss="alert" aria-label="Close">
              <span aria-hidden="true">&times;</span>
            </button>
@@ -79,8 +81,8 @@ if ($result) {
                 ?>
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="">ID</label>
-                        <input type="text" class="form-control col-md-1" name="campo_idOs" id="campo_imei" maxlength="15" value="<? echo $os ?>" readonly>
+                        <label for="" hidden="false">ID</label>
+                        <input type="text" class="form-control col-md-1" name="campo_idOs" id="campo_imei" maxlength="15" value="<? echo $os ?>" readonly hidden="false">
                     </div>
                     <div class="form-group col-md-2">
 
@@ -224,13 +226,19 @@ if ($result) {
                                 require_once('../Connections/Conexao.php');
                                 $ObjDB = new DB();
                                 $link = $ObjDB->connecta_mysql();
-                                $sql = "select * from PecasManutencao";
+                                if($equipamento == "Impressora"){
+                                    $sql = "select * from PecasManutencao where marcaEquipamento = 'Bixolon'";
+                                }else{
+                                    $sql = "select * from PecasManutencao where marcaEquipamento = 'Motorola'";
+                                }
+                                
                                 $result = mysqli_query($link, $sql);
                                 if ($result) {
                                     while ($registro = mysqli_fetch_array($result)) {
 
                                         $idPecas = $registro['idPecas'];
                                         $descricaoPeca = $registro['descricaoPeca'];
+                                        $valor =  $registro["valorPeca"];
 
                                         echo '<option value="' . $idPecas . '">' . $descricaoPeca . '</option>';
                                     }
@@ -239,6 +247,7 @@ if ($result) {
                             </select>
                         </div>
                         <div class="form-group col-md-2">
+                            <input name="campo_valor" id="campo_valor" class="form-control" type="decimal" value="<? echo $valor ?>" hidden>
                             <input name="campo_os" id="campo_osId" class="form-control" type="text" value="<? echo $os ?>" hidden>
                         </div>
                         <div class="form-group col-md-2">

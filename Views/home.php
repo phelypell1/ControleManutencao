@@ -5,3 +5,8 @@ if(!isset($_SESSION['login'])){
   }
     require_once('../Cabecalhos/nav-bar.php');
 ?>
+<body>
+    <div class="" style="margin-top: 150px; margin-left: 500px;">
+      <img src="../imagens/fr.png" alt="">
+    </div>
+</body>

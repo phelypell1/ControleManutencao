@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $iduser = $_SESSION['id'];
 
     if(isset($_SESSION['Login'])){
         header('Location: ../Views/login.php?erro=1');
@@ -43,17 +44,22 @@
 
 
     if($txt_descresolucao == ''){
-        header('Location: ../Views/detalhes_os.php?status=3');
+        header('Location: ../Views/detalhes_os.php?id='.$campo_id.'');
+        echo '<p>Preenchas os campos</p>';
         die();
     }
 
     $ObjDB = new DB();
     $link = $ObjDB -> connecta_mysql();
+    if($txt_status == "Fechado"){
+        $query = "update CadastroOs set osStatus = 'Fechado' where idOs = $campo_id";
+        mysqli_query($link,$query);
+    }
 
     $sql ="insert into HistoricoManutencao ";
-    $sql.= "(osId, descResolucao, dataOcorrido, dataPostagem, nOsAssistencia, dataDespacho, dataServico, dataFechamento, dataRetorno, tecnicoSut, tipoReparo, status) ";
+    $sql.= "(osId, descResolucao, dataOcorrido, dataPostagem, nOsAssistencia, dataDespacho, dataServico, dataFechamento, dataRetorno, tecnicoSut, tipoReparo, status, tecAtendimento) ";
     $sql.="values ";
-    $sql.="('$campo_id','$txt_descresolucao', '$dataOcorrido','$dataPostagem', '$nOsTec', '$dataDespacho', '$dataServico', '$dataFechamento', '$dataRetorno', '$txt_tecSut', '$txt_tipoRegistro', '$txt_status') ";
+    $sql.="('$campo_id','$txt_descresolucao', '$dataOcorrido','$dataPostagem', '$nOsTec', '$dataDespacho', '$dataServico', '$dataFechamento', '$dataRetorno', '$txt_tecSut', '$txt_tipoRegistro', '$txt_status','$iduser') ";
 
     if(mysqli_query($link,$sql)){
         header('Location: ../Views/lista_manutencao.php?status=1');

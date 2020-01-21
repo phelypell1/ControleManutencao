@@ -272,9 +272,6 @@ h4{
     background-color: red;
     border: red;
 }
-
-
-
 /*Modal
 .bg-modal{
     width: auto;
@@ -310,4 +307,30 @@ h4{
 
 .btn-retirar{
     top: 30px;
+}
+/*--------------------------------------------*/
+.class-border{
+    margin-top: 15px;
+    border-radius: 5px;
+    width: 1325px;
+}
+h5{
+    text-align: center;
+    color: red;
+}
+.container-config{
+    background-color: burlywood;
+    margin-top: 15px;
+    border-radius: 5px;
+    width: 450px;
+    margin-left: 0px;
+}
+/*/*/
+.tbl-tbl{
+    width:1320px;
+    margin-top:15px;
+    margin-left: 2px;
+    border-radius:8px;
+    table-layout: fixed;
+
 }

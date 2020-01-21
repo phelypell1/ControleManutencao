@@ -1,5 +1,6 @@
 <?php
   $nome = $_SESSION['username'];  
+  $imagem = $_SESSION['imagem'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -25,7 +26,7 @@
     <ul class="navbar-nav mr-auto">
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="../imagens/user.png" width="35">
+          <img src="<?echo$imagem?>" width="35">
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href=""><?echo$nome?></a>
@@ -48,24 +49,17 @@
           <a class="dropdown-item" href="../Cadastros/cadastro_pecas.php">Peças</a>
         </div>
       </li>
-
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Relatórios
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="../Views/lista_os.php">Entradas</a>
-          <a class="dropdown-item" href="../Views/lista_pecas.php">Peças</a>
-          <a class="dropdown-item" href="#">Saída</a>
-          <a class="dropdown-item" href="../Views/lista_manutencao.php">Manutenção</a>
-          
+          <a class="dropdown-item" href="../Views/lista_coletores.php">Coletores</a>
+          <a class="dropdown-item" href="../Views/lista_impressoras.php">Impressoras</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" tabindex="-1" >Sobre</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" tabindex="-1" >BETA 1.0.2</a>
+        <a class="nav-link" href="../sobre/sobre.php" tabindex="-1" >Sobre</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

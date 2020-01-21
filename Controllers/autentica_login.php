@@ -1,7 +1,7 @@
 <?php
     //sempre iniciar o session;
 
-    session_start();
+      session_start();
       require_once('../Connections/ConexaoUser.php');
       $usuario = $_POST['login'];
       $passwords = $_POST['senha'];
@@ -26,10 +26,10 @@
             $_SESSION['useremail'] = $dados['Email'];
             $_SESSION['ehAtivo'] = $dados['EhAtivo'];
             $_SESSION['userperfil']  = $dados['Perfil'];
+            $_SESSION['imagem'] = $dados['Imagem'];
             
 
              header('location: ../Views/home.php');
-         
             if($_SESSION['EhAtivo'] == 'True'){
             header('location: ../Views/home.php');
             }
