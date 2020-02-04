@@ -62,7 +62,7 @@
     $sql.="('$campo_id','$txt_descresolucao', '$dataOcorrido','$dataPostagem', '$nOsTec', '$dataDespacho', '$dataServico', '$dataFechamento', '$dataRetorno', '$txt_tecSut', '$txt_tipoRegistro', '$txt_status','$iduser') ";
 
     if(mysqli_query($link,$sql)){
-        header('Location: ../Views/lista_manutencao.php?status=1');
+        header('Location: ../Views/detalhes_os.php?status=1?id='.$campo_id.'');
     }else{
         header('Location: ../Views/lista_manutencao.php?status=2'.mysqli_error($link));
     }

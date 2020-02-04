@@ -7,14 +7,27 @@ require_once('../Cabecalhos/nav-bar.php');
 $id_sessao = $_SESSION['id'];
 $status = isset($_GET['status']) ? $_GET['status'] : 0;
 ?>
+<script src="../jquery/jquery-3.4.1.js"></script>
+<script lang="javascript">
+    $(document).ready(function() {
+        $('#btn-img').click(function() {
+            $.ajax({
+                url: '../Controllers/castrafoto.php',
+                method: 'post',
+                data: $('#enviaImagem').serialize(),
+                success: function(data) {
+                    alert(data);
+                }
+            })
+        });
+    });
+</script>
 <?
 require_once('../Connections/ConexaoUser.php');
-
-
 $ObjDB = new DBUser();
 $link = $ObjDB->connecta_mysql();
 
-$query = "select U.IdUsuario, L.Login, P.Perfil, U.Nome, U.EhAtivo, DATE_FORMAT(U.DataCadastro, '%d-%m-%Y %H:%i:%s')as dataf, U.Email, U.Cargo, U.Regiao ";
+$query = "select U.IdUsuario, L.Login, P.Perfil, U.Nome, U.EhAtivo, DATE_FORMAT(U.DataCadastro, '%d-%m-%Y %H:%i:%s')as dataf, U.Email, U.Cargo, U.Regiao, U.Imagem ";
 $query .= "from Usuario as U ";
 $query .= "inner join Login as L on L.idLogin = U.IdLogin ";
 $query .= "inner join Perfil as P on P.IdPerfil = U.IdPerfil ";
@@ -37,11 +50,14 @@ if ($result) {
         $email = $registro['Email'];
         $cargo = $registro['Cargo'];
         $regiao = $registro['Regiao'];
+        $imagem = $registro['Imagem'];
     }
 }
 ?>
 <body>
-    <div class="container border top">
+
+    <div class="container border top" enctype="multipart/form-data">
+    
         <div class="row">
             <form action="../Controllers/update_meusdados.php" method="post" class="col">
                 <div class="form-row">
@@ -80,7 +96,7 @@ if ($result) {
                         <label for="Cód Usuário">Perfil Acesso</label>
                         <input type="text" class="form-control" name="campo_perfil" id="campo_perfil" value="<? echo $perfil ?>" readonly>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="Cód Usuário">Nome Completo</label>
                         <input type="text" class="form-control" name="campo_nome" id="campo_nome" value="<? echo $nome ?>">
                     </div>
@@ -103,6 +119,10 @@ if ($result) {
                     <div class="form-group col-md-2">
                         <label for="Cód Usuário">Região</label>
                         <input type="e-mail" class="form-control" name="campo_regiao" id="campo_regiao" value="<? echo $regiao ?>" readonly>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="Cód Usuário">Imagem:</label>
+                       <img src="<?echo$imagem?>" width="130" height="90">
                     </div>
                 </div>
                 <div class="form-row">

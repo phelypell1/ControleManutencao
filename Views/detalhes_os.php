@@ -6,6 +6,7 @@ if (!isset($_SESSION['login'])) {
 require_once('../Cabecalhos/nav-bar.php');
 $status = isset($_GET['status']) ? $_GET['status'] : 0;
 $Valorglobal = $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
+$tipoReparo = null;
 ?>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <script lang="javascript">
@@ -42,14 +43,13 @@ if ($result) {
         $tecnicoRecebimento = $registro['tecnicoRecebimento'];
         $origem = $registro['nomeCidade'];
         $departamento =  $registro['nomeDep'];
-        $tipoReparo = $registro['tipoReparo'];
+        $tipoReparo = "";
         $status = $registro['osStatus'];
     }
 }
 ?>
 <link rel="stylesheet" href="../PageStyle/fieldset.css">
 <script src="../jquery/jquery-3.4.1.js"></script>
-
 <body>
     <div class="container">
         <link rel="stylesheet" href="../PageStyle/text-table.css">

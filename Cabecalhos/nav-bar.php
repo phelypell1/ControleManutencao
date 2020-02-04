@@ -1,6 +1,8 @@
 <?php
-  $nome = $_SESSION['username'];  
+  $nome = $_SESSION['username'];
+  $login = $_SESSION['login']; 
   $imagem = $_SESSION['imagem'];
+  $idUsuario = $_SESSION['id'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -26,12 +28,19 @@
     <ul class="navbar-nav mr-auto">
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="<?echo$imagem?>" width="35">
+        <?  
+          if($imagem != null){
+          echo'<img src="'.$imagem.'" width="35">';
+        }else{
+          echo'<img src="../imagens/user.png" width="35">';
+        }
+        ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href=""><?echo$nome?></a>
           <a class="dropdown-item" href="../MeuDados/meus-dados.php">Meus Dados</a>
-          <a class="dropdown-item" href="">Alterar Senha</a>
+          <a class="dropdown-item" href="../Views/alteraSenha.php">Alterar Senha</a>
+          <a class="dropdown-item" href="../Views/alterafoto.php">Alterar imagem</a>
           <hr>
           <a class="dropdown-item" href="../Views/logoutHome.php">Sair <img src="../imagens/logout.png" width="18"></a>
         </div>

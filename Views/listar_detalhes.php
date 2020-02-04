@@ -10,10 +10,16 @@ $despacho = null . $servico = null . $fechamanento = null . $retorno = null . $t
 $status = null . $tecAtend = null . $dtEdt = null . $dOcorrido = null . $descRes = null . $dpostagem = null . $nOs = null;
 $ddespacho = null . $dservico = null . $nomeTec = null;
 $vetor = null;
-$idT = null;
 $nome = null.$nof = null;
 $tt = null;
+$idTroca[] = null;
+$nomes[] = null;
+$preco[] = null;
 $array = array();
+$consult = false;
+$idT =  null;
+$nome = null;
+$precos = null;
 ?>
 <?
 require_once('../Connections/Conexao.php');
@@ -21,7 +27,7 @@ $ObjDB = new DB();
 $link = $ObjDB->connecta_mysql();
 $sql = "select * from S0005 where osId = $Valorglobal";
 $result = mysqli_query($link, $sql);
-if (isset($result)) {
+if (isset($result) != true) {
     while ($registro = mysqli_fetch_array($result)) {
         $idHist = $registro['idHistorico'];
         $osId = $registro['osId'];
@@ -74,8 +80,10 @@ if (isset($result)) {
         $tecAtend = $registro['tecAtendimento'];
         $dtEdt = $registro['edit'];
     }
-} else {
-    echo '<p>Sem consulta</p>';
+} else{
+    echo '<div class="container col" style="text-align:center;color:red;">
+    <h4>Consulta não retornou registros</h4> 
+    </div>';
 }
 ?>
 <?
@@ -89,11 +97,16 @@ if ($consultauser) {
         $nomeTec = $reguser['nome'];
     }
 } else {
-    echo '<div class="container col">
-    <h4></H1>Sem registros</h4> 
-    </div>';
+    
 }
 ?>
+<script>
+    $(document).ready(function(){
+        if($consusult == false){
+            $('#div-tbl').style('style', 'visibility:hidden');    
+        }
+    });
+</script>
 <link rel="stylesheet" href="../PageStyle/styleHome.css">
 
 <body>
@@ -147,7 +160,7 @@ if ($consultauser) {
             </div>
         </div>
         <hr>
-        <div class="container container-config col-md-12">
+        <div class="container container-config col-md-12" id="div-tbl">
             <?
             require_once('../Connections/Conexao.php');
             $ObjDB = new DB();
@@ -162,7 +175,8 @@ if ($consultauser) {
             }
         }
             $consult = mysqli_query($links, $query);
-            if (isset($consult)) {
+            
+            if (isset($consult) == null) {
                 echo '<table class="table">
                 <thead>
                   <tr>
@@ -170,7 +184,6 @@ if ($consultauser) {
                     <th scope="col">Descrição</th>
                     <th scope="col">Preço</th>
                     <th scope="col">Total</th>
-
                   </tr>
                 </thead>';
                 $nof = mysqli_num_fields($consult);
@@ -185,8 +198,7 @@ if ($consultauser) {
 
                     
                 }
-                ;
-            }else{
+            }else if($consult == false){
                 echo 'sem registro';
             }
             $idT = implode("<br>",$idTroca);

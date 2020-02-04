@@ -12,7 +12,7 @@
             Geração de relátorios de saída, manutenções abertas, contabilização de peças substituidas
             e outros.
         </p><br>
-        <p><b>versão: 1.0.4</b></p>
+        <p><b>versão: 1.0.5</b></p>
         <p>Desenvolvido por: Phelype Rodrigo</p> 
     </div>
 </body>

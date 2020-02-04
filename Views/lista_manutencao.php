@@ -12,7 +12,7 @@ require_once("../Cabecalhos/nav-bar.php");
         $(document).ready(function(){
             function atualiza(){
                 $.ajax({
-                    url: '../Controllers/listar_historico.php',
+                    url: '../Controllers/listar_historico.php?id=72',
                     success: function(data){
                         $('#table').html(data);
                     }

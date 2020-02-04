@@ -143,6 +143,7 @@ h4{
 .borderchamado{
     border:solid 1px #ccc;
     background-color: #F0FFF0;
+    border-radius: 8px;
 }
 /*Config select*/
 .configSelect{
@@ -333,4 +334,122 @@ h5{
     border-radius:8px;
     table-layout: fixed;
 
+}
+/*-------------OrdemServico------------*/
+.cont-border{
+    border-radius: 5px;
+    margin-top: 20px;
+    
+}
+.input{
+    height: 30px;
+}
+.tp-eq{
+    width: 120px;
+}
+.patrimonio{
+    width: 70px;
+    margin-left: 15px;
+}
+.label{
+    margin-left: 15px;
+}
+.imei{
+    width: 162px;
+}
+.sut{
+    width: 85px;
+}
+.cidade{
+    margin-left: -75px;
+}
+/*--------------detalhes-os-----------------*/
+.border-config{
+    margin-top: 15px;
+}
+/*----historico new detalhes*/
+.lb{
+    margin-right: 35px;
+}
+.input-reg{
+    margin-top: 5px;
+    width: 45px;
+    height: 30px;
+    margin-right: 25px;
+    text-align: center;
+}
+.input-eq{
+    margin-top: 5px;
+    width: 110px;
+    height: 30px;
+    margin-right: 25px;
+    text-align: center;
+}
+.fieldsetHist
+{   
+    margin-top: 5px;
+    border: 1px solid black ;
+    padding:6px;
+    margin-bottom: 10px;
+    height: 105px;
+    background-color:wheat;
+}
+
+.legendHist
+{
+  margin-bottom:-10px;
+ 
+}
+.fielsetManut
+{   
+    margin-top: 5px;
+    border: 1px solid black ;
+    padding:6px;
+    margin-bottom: 10px;
+    height: 105px;
+    background-color:wheat;
+}
+
+.legendManut
+{
+  margin-bottom:-10px;
+ 
+}
+.inputdata{
+    width: 90px;
+}
+
+/*Container Hist*/
+.containner{
+    margin-top: 5px;
+    position: absolute;
+    width: 1110px;
+    height: 471px;
+    background: #C4C4C4;
+    border-radius: 5px;
+}
+.container-historico{
+    position: absolute;
+    width: 303px;
+    height: 143px;
+    background-color: black;
+}
+.margin-t{
+    margin-top: -55px;
+}
+.assist{
+    margin-top: -260px;
+    margin-left: 465px;
+}
+.fielsetAssist
+{   
+    margin-top: 5px;
+    border: 1px solid black ;
+    padding:6px;
+    margin-bottom: 10px;
+    height: 250px;
+}
+.legendAssist
+{
+  margin-top:5px;
 }
