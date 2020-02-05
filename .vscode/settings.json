@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "ControleManutencao",
+            "dialect": "MySQL",
+            "name": "ControleManutencao",
+            "password": "X01nn@h77M",
+            "port": 3306,
+            "server": "localhost",
+            "username": "admin"
+        }
+    ]
+}

@@ -22,7 +22,7 @@ require_once('../Cabecalhos/nav-bar.php');
     osStatus from CadastroOs where tipoEquipamento = 'Smartphone' order by idOs asc limit $inicio, $maximo";
     $result = mysqli_query($link, $sql);
     echo '
-    <div class=" tbl-tbl">
+    <div class="container tbl-tbl">
     <table class="table table-bordered table-hover table-sm tbl-tbl">
             <thead>
               <tr>
