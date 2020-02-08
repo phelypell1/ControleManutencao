@@ -9,7 +9,7 @@ require_once('../Cabecalhos/nav-bar.php');
 <script src="../jquery/jquery-3.4.1.js"></script>
 <body>
 
-  <div id="lista_imp">
+  <div id="lista_imp" class="table-responsive">
   <?
     require_once('../Connections/Conexao.php');
     $ObjDB = new DB();
@@ -22,22 +22,22 @@ require_once('../Cabecalhos/nav-bar.php');
     $sql = "select idOs,tipoEquipamento, IMEI, Patrimonio, descricaoDefeito, date_format(dataEntrada, '%d-%m-%Y')as dat,
     osStatus from CadastroOs where tipoEquipamento = 'impressora' order by idOs asc limit $inicio, $maximo";
     $result = mysqli_query($link, $sql);
-    echo '
-    <div class="container tbl-tbl">
-    <table class="table table-bordered table-hover table-sm tbl-tbl">
+    echo ' 
+    <div class="container tbl-tbl ">
+    <table class="table table-borderless table-sm tbl-tbl">
             <thead>
               <tr>
-                <th class="tables" scope="col">#</th>
-                <th  class="tables"class="tables" scope="col">Equipamento</th>
-                <th class="tables" class="tables" scope="col">IMEI</th>
-                <th class="tables" scope="col">Patrimônio</th>
-                <th class="tables" scope="col">Defeito</th>
+                <th class="tables" scope="col" width="40">#</th>
+                <th  class="tables"class="tables" scope="col" width="110">Equipamento</th>
+                <th class="tables" class="tables" scope="col" width="110">IMEI</th>
+                <th class="tables" scope="col" width="110">Patrimônio</th>
+                <th class="tables" scope="col" width="500">Defeito</th>
                 <th class="tables" scope="col">Entrada</th>
                 <th class="tables" scope="col">Status</th>
-                <th class="tables" scope="col">Editar</th>
-                <th class="tables" scope="col">Nova OS</th> 
-                <th class="tables" scope="col">Histórico</th>
-                <th class="tables" scope="col">Impressão</th>
+                <th class="tables" scope="col" width="55">Editar</th>
+                <th class="tables" scope="col" width="80">Nova OS</th> 
+                <th class="tables" scope="col" width="80">Histórico</th>
+                <th class="tables" scope="col" width="90">Impressão</th>
               </tr>
             </thead>
             </div>';
@@ -54,10 +54,10 @@ require_once('../Cabecalhos/nav-bar.php');
         $status =  $registro['osStatus'];
         /////////////////////////////////////////
         echo '
-        <tbody class="table-borderless">    
+        <tbody class="table">    
             <tr>
                 <th scope="row" class="td">' . $os . '</th>
-                <td>' . $equipamento . '</td>
+                <td >' . $equipamento . '</td>
                 <td>' . $imei . '</td>
                 <td>' . $patrimonio . '</td>
                 <td>' . $descDefeito . '</td>

@@ -13,7 +13,7 @@ require_once('../Cabecalhos/nav-bar.php');
     require_once('../Connections/Conexao.php');
     $ObjDB = new DB();
     $link = $ObjDB->connecta_mysql();
-    $maxlink = 10;
+    $maxlink = 2;
     $pagina = (isset($_GET['pagina'])) ? (int) $_GET['pagina'] : 1;
     $maximo = 8;
     $inicio = (($maximo * $pagina) - $maximo);
@@ -23,20 +23,20 @@ require_once('../Cabecalhos/nav-bar.php');
     $result = mysqli_query($link, $sql);
     echo '
     <div class="container tbl-tbl">
-    <table class="table table-bordered table-hover table-sm tbl-tbl">
+    <table class="table table-borderless table-sm tbl-tbl">
             <thead>
               <tr>
-                <th class="tables" scope="col">#</th>
-                <th  class="tables"class="tables" scope="col">Equipamento</th>
-                <th class="tables" class="tables" scope="col">IMEI</th>
-                <th class="tables" scope="col">Patrimônio</th>
-                <th class="tables" scope="col">Defeito</th>
+                <th class="tables" scope="col" width="40">#</th>
+                <th  class="tables"class="tables" scope="col"  width="110">Equipamento</th>
+                <th class="tables" class="tables" scope="col" width="110">IMEI</th>
+                <th class="tables" scope="col" width="110">Patrimônio</th>
+                <th class="tables" scope="col" width="400">Defeito</th>
                 <th class="tables" scope="col">Entrada</th>
                 <th class="tables" scope="col">Status</th>
-                <th class="tables" scope="col">Editar</th>
-                <th class="tables" scope="col">Nova OS</th> 
-                <th class="tables" scope="col">Histórico</th>
-                <th class="tables" scope="col">Impressão</th>
+                <th class="tables" scope="col" width="55">Editar</th>
+                <th class="tables" scope="col" width="80">Nova OS</th> 
+                <th class="tables" scope="col" width="80">Histórico</th>
+                <th class="tables" scope="col" width="90">Impressão</th>
               </tr>
             </thead>
             </div>';
@@ -53,7 +53,7 @@ require_once('../Cabecalhos/nav-bar.php');
         $status =  $registro['osStatus'];
         /////////////////////////////////////////
         echo '
-        <tbody class="table-borderless">    
+        <tbody class="table table-striped">    
             <tr>
                 <th scope="row" class="td">' . $os . '</th>
                 <td>' . $equipamento . '</td>
@@ -82,11 +82,11 @@ require_once('../Cabecalhos/nav-bar.php');
     $total =  $result_query->num_rows;
     $total_pg = ceil($total/$maximo);
     if($total > $maximo){
-    echo' <nav aria-label="Navegação de página exemplo" clas="col-md-10">';
+    echo' <nav aria-label="Navegação de página exemplo" clas="col-md-10 poss-pagina">';
     echo'<ul class="pagination justify-content-center">';
     echo'<li class="page-item">';
-      echo' <a class="page-link" href="?pagina=1" tabindex="-1">Primeiro</a>';
-      for($i = $pagina - $maxlink; $i <= $pagina -1; $i++){
+      echo' <a class="page-link" href="?pagina=1" tabindex="-1">Início</a>';
+      for($i = $pagina - $maxlink; $i <= $pagina - 1; $i++){
         if($i >= 1){
           echo '<li>';
         echo' <a class="page-link" href="?pagina='.$i.'" tabindex="-1">'.$i.'</a>';
